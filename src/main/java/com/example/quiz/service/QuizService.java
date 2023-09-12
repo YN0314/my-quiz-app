@@ -19,4 +19,8 @@ public interface QuizService {
     void updateQuiz(Quiz quiz);
     /** クイズを削除します */
     void deleteQuizById(Integer id);
+    /** クイズを全削除します */
+    void deleteAll();
+    /** シリアルIDの採番をリセットします */
+    void resetIdentity();
 }

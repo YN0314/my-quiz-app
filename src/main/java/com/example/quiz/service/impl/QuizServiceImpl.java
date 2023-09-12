@@ -60,4 +60,14 @@ public class QuizServiceImpl implements QuizService {
     public void deleteQuizById(Integer id) {
         repo.deleteById(id);
     }
+
+    @Override
+    public void deleteAll() {
+        repo.deleteAll();
+    }
+
+    @Override
+    public void resetIdentity() {
+        repo.resetIdentity();
+    }
 }
