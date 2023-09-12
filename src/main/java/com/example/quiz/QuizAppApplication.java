@@ -23,17 +23,17 @@ public class QuizAppApplication {
     }
 
     private void execute() {
-        // 登録
-        setup();
-        // 全件取得
-        showList();
-        // 1件取得
-        showOne(1);
-        // 更新処理
-        updateQuiz(1);
-        showOne(1);
-        // 削除処理
-        deleteQuiz(2);
+//        // 登録
+//        setup();
+//        // 全件取得
+//        showList();
+//        // 1件取得
+//        showOne(1);
+//        // 更新処理
+//        updateQuiz(1);
+//        showOne(1);
+//        // 削除処理
+//        deleteQuiz(2);
     }
 
     private void setup() {
