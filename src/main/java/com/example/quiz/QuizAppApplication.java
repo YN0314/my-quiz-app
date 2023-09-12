@@ -30,7 +30,7 @@ public class QuizAppApplication {
         // 1件取得
         showOne(1);
         // 更新処理
-        updateQuiz();
+        updateQuiz(1);
         showOne(1);
         // 削除処理
         deleteQuiz(2);
@@ -60,9 +60,9 @@ public class QuizAppApplication {
         System.out.println("--- 1件取得終了 ---");
     }
 
-    private void updateQuiz() {
+    private void updateQuiz(Integer id) {
         System.out.println("--- 更新処理開始 ---");
-        Quiz quiz1 = repo.findById(1).orElseThrow();
+        Quiz quiz1 = repo.findById(id).orElseThrow();
         repo.save(Quiz.builder()
                 .id(quiz1.id())
                 .question("「スプリング」はフレームワークですか？")
