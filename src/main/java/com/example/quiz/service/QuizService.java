@@ -12,7 +12,7 @@ public interface QuizService {
     /** クイズを1件ランダムで取得します */
     Optional<Quiz> selectOneRandom();
     /** クイズの正解/不正解を判断します */
-    Boolean checkAnswwer(Integer id, Boolean answer);
+    Boolean checkAnswer(Integer id, Boolean answer);
     /** クイズを登録します */
     void insertQuiz(Quiz quiz);
     /** クイズを更新します */

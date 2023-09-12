@@ -38,7 +38,7 @@ public class QuizServiceImpl implements QuizService {
     }
 
     @Override
-    public Boolean checkAnswwer(Integer id, Boolean answer) {
+    public Boolean checkAnswer(Integer id, Boolean answer) {
         Optional<Quiz> quiz = repo.findById(id);
         if (quiz.isPresent()) {
             return quiz.get().answer().equals(answer);
