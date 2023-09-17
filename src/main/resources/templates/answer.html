@@ -14,10 +14,12 @@
             <h1 th:text="#{label.quiz.answer.title}"></h1>
         </div>
 
-        <div class="main">
-            <h2 class="text-danger" th:text="${msg}"></h2>
-            <a class="mr-2" th:href="@{/quiz/play}" th:text="#{label.link.quiz.replay}"></a>
-            <a th:href="@{/quiz}" th:text="#{label.link.quiz.crud}"></a>
+        <div class="main m-2">
+            <h2 class="text-danger mb-2" th:text="${msg}"></h2>
+            <div class="d-flex flex-column">
+                <a th:href="@{/quiz/play}" th:text="#{label.link.quiz.replay}"></a>
+                <a th:href="@{/quiz}" th:text="#{label.link.quiz.crud}"></a>
+            </div>
         </div>
     </body>
 </html>
