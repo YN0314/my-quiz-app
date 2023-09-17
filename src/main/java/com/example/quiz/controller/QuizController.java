@@ -49,6 +49,29 @@ public class QuizController {
         return "crud";
     }
 
+    /** クイズプレイ */
+    @GetMapping("/play")
+    public String showQuiz(QuizForm quizForm, Model model) {
+        model.addAttribute("quizForm", quizForm);
+        model.addAttribute("title", getMessage("label.quiz.play.subtitle"));
+        service.selectOneRandom().ifPresentOrElse(quiz -> {
+            model.addAttribute("quizForm", makeQuizForm(quiz));
+        }, () -> {
+            model.addAttribute("msg", getMessage("label.msg.answer.nothingQuestion"));
+        });
+        return "play";
+    }
+
+    /** クイズの解答チェック */
+    @PostMapping("/check")
+    public String checkQuiz(QuizForm quizForm, @RequestParam Boolean answer, Model model) {
+        if (service.checkAnswer(quizForm.getId(), answer)) {
+            model.addAttribute("msg", getMessage("label.msg.answer.success"));
+        } else {
+            model.addAttribute("msg", getMessage("label.msg.answer.failed"));
+        }
+        return "answer";
+    }
     /** クイズ登録 */
     @PostMapping("/insert")
     public String insert(@Validated QuizForm quizForm, BindingResult result, Model model, RedirectAttributes attr) {
