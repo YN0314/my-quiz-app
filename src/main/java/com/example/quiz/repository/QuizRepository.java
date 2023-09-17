@@ -7,6 +7,10 @@ import org.springframework.data.repository.CrudRepository;
 import com.example.quiz.entity.Quiz;
 
 public interface QuizRepository extends CrudRepository<Quiz, Integer>{
+
+    /** Id昇順全件 */
+    Iterable<Quiz> findAllByOrderById();
+
     /** シリアルIDの採番をリセットします */
     @Modifying
     @Query(value = "TRUNCATE TABLE quiz RESTART IDENTITY")

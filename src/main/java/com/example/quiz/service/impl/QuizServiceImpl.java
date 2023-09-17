@@ -20,7 +20,7 @@ public class QuizServiceImpl implements QuizService {
 
     @Override
     public Iterable<Quiz> selectAll() {
-        return repo.findAll();
+        return repo.findAllByOrderById();
     }
 
     @Override
