@@ -6,12 +6,12 @@
         <link th:href="@{/css/common.css}" rel="stylesheet">
         <script th:src="@{/webjars/jquery/3.7.1/jquery.min.js}"></script>
         <script th:src="@{/webjars/bootstrap/5.3.1/js/bootstrap.min.js}"></script>
-        <title th:text="#{label.quiz.title}"></title>
+        <title th:text="#{label.quiz.crud.title}"></title>
     </head>
 
     <body>
         <div class="m-2 header">
-            <h1 th:text="#{label.quiz.title}"></h1>
+            <h1 th:text="#{label.quiz.crud.title}"></h1>
             <h3 th:text="${title}"></h3>
             <p class="text-primary" th:if="${complete}" th:text="${complete}"></p>
         </div>
@@ -85,7 +85,7 @@
         </div>
 
         <p class="m-2" th:unless="${quizForm.isNew}">
-            <a href="#" th:href="@{/quiz}" th:text="#{label.link.quiz}"></a>
+            <a href="#" th:href="@{/quiz}" th:text="#{label.link.quiz.crud}"></a>
         </p>
     </body>
 </html>

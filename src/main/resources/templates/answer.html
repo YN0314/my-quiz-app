@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <link th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}" rel="stylesheet">
+        <link th:href="@{/css/common.css}" rel="stylesheet">
+        <script th:src="@{/webjars/jquery/3.7.1/jquery.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/5.3.1/js/bootstrap.min.js}"></script>
+        <title th:text="#{label.quiz.answer.title}"></title>
+    </head>
+
+    <body>
+        <div class="m-2 header">
+            <h1 th:text="#{label.quiz.answer.title}"></h1>
+        </div>
+
+        <div class="main m-2">
+            <h2 class="text-danger mb-2" th:text="${msg}"></h2>
+            <div class="d-flex flex-column">
+                <a th:href="@{/quiz/play}" th:text="#{label.link.quiz.replay}"></a>
+                <a th:href="@{/quiz}" th:text="#{label.link.quiz.crud}"></a>
+            </div>
+        </div>
+    </body>
+</html>

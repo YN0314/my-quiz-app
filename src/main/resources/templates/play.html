@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <link th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}" rel="stylesheet">
+        <link th:href="@{/css/common.css}" rel="stylesheet">
+        <script th:src="@{/webjars/jquery/3.7.1/jquery.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/5.3.1/js/bootstrap.min.js}"></script>
+        <title th:text="#{label.quiz.play.title}"></title>
+    </head>
+
+    <body>
+        <div class="m-2 header">
+            <h1 th:text="#{label.quiz.play.title}"></h1>
+        </div>
+
+        <div class="m-2">
+            <h3 th:text="${title}"></h3>
+            <th:block th:if="${msg}">
+                <p class="text-danger" th:text="${msg}"></p>
+                <a th:href="@{/quiz}" th:text="#{label.link.quiz.crud}"></a>
+            </th:block>
+            <th:block th:unless="${msg}">
+                <div class="bg-light border w-50 p-2 mb-2" >
+                    <p class="font-italic m-0" th:text="${quizForm.question}"></p>
+                </div>
+                <form class="answer-form" th:action="@{/quiz/check}" th:object="${quizForm}" method="POST">
+                    <input type="hidden" th:field="*{id}">
+                    <button class="btn btn-outline-primary" name="answer" value="true" th:text="#{label.answer.true}"></button>
+                    <button class="btn btn-outline-primary" name="answer" value="false" th:text="#{label.answer.false}"></button>
+                </form>
+            </th:block>
+        </div>
+    </body>
+</html>
