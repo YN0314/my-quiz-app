@@ -52,8 +52,8 @@
         <hr />
 
         <div class="m-2" th:if="${quizForm.isNew}">
-            <h3><span class="table-title" th:text="#{label.table.title}"></span><a th:href="@{/quiz/play}">プレイ</a></h3>
-            <p class="text-primary" th:if="${decomplete}" th:text="${decomplete}"></p>
+            <h3><span class="table-title" th:text="#{label.table.title}"></span><a th:href="@{/quiz/play}" th:text="#{label.link.quiz.play}"></a></h3>
+            <p class="text-primary" th:if="${delcomplete}" th:text="${delcomplete}"></p>
             <p class="text-danger" th:if="${msg}" th:text="${msg}"></p>
             <table class="table" th:nuless="${#lists.isEmpty(list)}">
                 <tr>
@@ -84,7 +84,7 @@
             </table>
         </div>
 
-        <p th:unless="${quizForm.isNew}">
+        <p class="m-2" th:unless="${quizForm.isNew}">
             <a href="#" th:href="@{/quiz}" th:text="#{label.link.quiz}"></a>
         </p>
     </body>
