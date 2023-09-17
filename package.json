@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "sass:build": "node-sass src/main/resources/assets/scss --output src/main/resources/static/css"
+    },
+    "dependencies": {
+        "node-sass": "^9.0.0"
+    }
+}

@@ -1,0 +1,13 @@
+.form-label {
+    width: 140px;
+    &:after {
+        content: ":";
+    }
+}
+
+.table-title {
+    &:after {
+        content: ":";
+        margin-right: 5px;
+    }
+}
