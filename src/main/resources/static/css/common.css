@@ -1,0 +1,11 @@
+.form-label {
+  width: 140px; }
+  .form-label:after {
+    content: ":"; }
+
+.table-title:after {
+  content: ":";
+  margin-right: 5px; }
+
+.radio {
+  width: 60px; }
